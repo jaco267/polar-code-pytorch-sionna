@@ -29,7 +29,7 @@ def set_seed(seed):
 set_seed(seed)
 from d_kernels import *#F2,F4,G4,F8,G8,F16,G16,F32,G32,G162
 from polar.froze import get_Kern_frozen_bits,get_Kern_frozen_bits2
-def gen_code(c:PolarConfig,Gn,name,mode='vit'):
+def gen_code(c:PolarConfig,Gn,name,mode='sc'):
   a = math.log(c.n,2);  assert a.is_integer()#7
   G_,G_weights,frozen_pos = get_Kern_frozen_bits(c.n,c.n-c.k,Gn)
   enc = PolarEnc2(frozen_pos, c.n,G_,device=device)  # RM codes with SCL decoding

@@ -7,14 +7,13 @@ class PolarConfig:
   '''
   python x_run_sn_polar/test_all.py --spec True --verbose True
   python x_run_sn_polar/main.py --k 32 --n 64 \
-  --algos ['tre_l_F4','tre_F4','rmld_F4'] --list_size 8\
+  --algos [scl] --list_size 8\
   --bs 1000 --mc_iter 1
   '''
   # code parameters
   k:int = 32  # number of information bits per codeword
   n:int = 64 # desired codeword length 
-  algos:List[str] = field(default=
-    ['tre_F4','rmld_F4','scl'], is_mutable=True)
+  algos:List[str] = field(default=['scl'], is_mutable=True)
   kern:str = 'F2' #only used in test
   verbose:bool = False
   bs:int = 3  #10000
